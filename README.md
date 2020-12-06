@@ -5,11 +5,16 @@ Home: http://github.com/jupyterlab/nbclassic
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/master/LICENSE.txt)
 
 Summary: Jupyter Notebook as a Jupyter Server Extension.
 
-Jupyter Notebook as a Jupyter Server Extension.
+Development: https://github.com/jupyterlab/nbclassic
+
+This project prepares for a future where JupyterLab and other frontends
+switch to Jupyter Server for their Python Web application backend. Using
+this package, users can launch Jupyter Notebook, JupyterLab and other
+frontends side-by-side on top of the new Python server backend.
 
 
 Current build status
@@ -118,6 +123,7 @@ Feedstock Maintainers
 =====================
 
 * [@afshin](https://github.com/afshin/)
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@jasongrout](https://github.com/jasongrout/)
 * [@jtpio](https://github.com/jtpio/)
 
