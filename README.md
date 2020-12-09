@@ -5,9 +5,11 @@ Home: http://github.com/jupyterlab/nbclassic
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/master/LICENSE.txt)
 
 Summary: Jupyter Notebook as a Jupyter Server Extension.
+
+Development: https://github.com/jupyterlab/nbclassic
 
 Jupyter Notebook as a Jupyter Server Extension.
 
