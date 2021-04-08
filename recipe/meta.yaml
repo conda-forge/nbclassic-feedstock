@@ -1,5 +1,5 @@
 {% set name = "nbclassic" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b649436ff85dc731ba8115deef089e5abbe827d7a6dccbad42c15b8d427104e8
+  sha256: 6835b27ffaed1f7a497371bb2c05c0f2b123cbcf7c3c116c1ca808ac78ac2fe8
 
 build:
   number: 0
@@ -22,7 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - jupyter_server >=1.0.1,<2.0.0
+    - jupyter_server >=1.5.0,<2.0.0
     - notebook <7
 
 test:
