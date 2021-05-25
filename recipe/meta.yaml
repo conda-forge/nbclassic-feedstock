@@ -31,6 +31,8 @@ test:
   commands:
     - pip check
     - jupyter nbclassic --help
+  requires:
+    - pip
 
 about:
   home: http://github.com/jupyterlab/nbclassic
