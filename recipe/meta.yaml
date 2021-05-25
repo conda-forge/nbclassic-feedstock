@@ -28,6 +28,9 @@ requirements:
 test:
   imports:
     - nbclassic
+  commands:
+    - pip check
+    - jupyter nbclassic --help
 
 about:
   home: http://github.com/jupyterlab/nbclassic
