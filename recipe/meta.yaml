@@ -2,7 +2,7 @@
 {% set version = "0.3.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -36,7 +36,10 @@ about:
   summary: Jupyter Notebook as a Jupyter Server Extension.
 
   description: |
-    Jupyter Notebook as a Jupyter Server Extension.
+    This project prepares for a future where JupyterLab and other frontends
+    switch to Jupyter Server for their Python Web application backend. Using
+    this package, users can launch Jupyter Notebook, JupyterLab and other
+    frontends side-by-side on top of the new Python server backend.
   dev_url: https://github.com/jupyterlab/nbclassic
 
 extra:
@@ -44,3 +47,4 @@ extra:
     - jasongrout
     - afshin
     - jtpio
+    - bollwyvl
