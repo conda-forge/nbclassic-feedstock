@@ -1,5 +1,5 @@
 {% set name = "nbclassic" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f920f8d09849bea7950e1017ff3bd101763a8d68f565a51ce053572e65aa7947
+  sha256: 863462bf6a6e0e5e502dcc479ce2ea1edf60437c969f1850d0c0823dba0c39b7
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
