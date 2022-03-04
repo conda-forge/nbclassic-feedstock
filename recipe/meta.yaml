@@ -35,7 +35,8 @@ test:
     - jupyter nbclassic --help
     - jupyter server extension list
     - jupyter server extension list 1>server_extensions 2>&1
-    - cat server_extensions | grep -E "nbclassic.*{{ version.replace(".", "\\.") }}.*OK"
+    - cat server_extensions | grep -iE "nbclassic.*enabled"
+    - cat server_extensions | grep -iE "nbclassic.*OK"
   requires:
     - pip
 
