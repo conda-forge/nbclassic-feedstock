@@ -29,10 +29,13 @@ requirements:
 test:
   imports:
     - nbclassic
+    - m2-grep  # [win]
   commands:
     - pip check
     - jupyter nbclassic --help
-    - jupyter serverextension list
+    - jupyter server extension list
+    - jupyter server extension list 1>server_extensions 2>&1
+    - cat server_extensions | grep -E "nbclassic.*{{ version.replace(".", "\\.") }}.*OK"
   requires:
     - pip
 
