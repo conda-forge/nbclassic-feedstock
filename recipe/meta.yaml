@@ -1,12 +1,11 @@
-{% set name = "nbclassic" %}
 {% set version = "0.3.6" %}
 
 package:
-  name: {{ name }}
+  name: nbclassic
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
   sha256: 7dbac0a6cb71bbe3afa1fe89369e6e3174d89f42aa08216a327046de45aa9a4f
 
 build:
@@ -19,12 +18,13 @@ build:
 requirements:
   host:
     - jupyter-packaging >=0.10,<1
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - jupyter_server >=1.8.0,<2.0.0
     - notebook <7
+    - notebook-shim >=0.1.0
 
 test:
   imports:
@@ -32,6 +32,7 @@ test:
   commands:
     - pip check
     - jupyter nbclassic --help
+    - jupyter serverextension list
   requires:
     - pip
 
