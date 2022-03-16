@@ -1,4 +1,4 @@
-{% set version = "0.3.6" %}
+{% set version = "0.3.7" %}
 
 package:
   name: nbclassic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: 7dbac0a6cb71bbe3afa1fe89369e6e3174d89f42aa08216a327046de45aa9a4f
+  sha256: 36dbaa88ffaf5dc05d149deb97504b86ba648f4a80a60b8a58ac94acab2daeb5
 
 build:
   number: 0
@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.10,<1
+    - jupyter-packaging >=0.9,<1
     - python >=3.7
     - pip
   run:
     - python >=3.7
-    - jupyter_server >=1.8.0,<2.0.0
+    - jupyter_server >=1.8.0
     - notebook <7
     - notebook-shim >=0.1.0
 
