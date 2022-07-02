@@ -22,8 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - jupyter_server >=1.8.0
-    - notebook <7
+    - jupyter_server >=1.17.0
     - notebook-shim >=0.1.0
 
 test:
