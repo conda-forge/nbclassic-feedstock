@@ -34,7 +34,7 @@ requirements:
     - nbconvert >=5
     - nbformat
     - nest-asyncio >=1.5
-    - notebook_shim >=0.1.0
+    - notebook-shim >=0.1.0
     - prometheus_client
     - python >=3.7
     - pyzmq >=17
