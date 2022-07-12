@@ -7,14 +7,16 @@ Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/main/LICENSE.txt)
 
-Summary: Jupyter Notebook as a Jupyter Server Extension.
+Summary: A web-based notebook environment for interactive computing
 
-Development: https://github.com/jupyterlab/nbclassic
+Development: https://github.com/jupyter/nbclassic
 
-This project prepares for a future where JupyterLab and other frontends
-switch to Jupyter Server for their Python Web application backend. Using
-this package, users can launch Jupyter Notebook, JupyterLab and other
-frontends side-by-side on top of the new Python server backend.
+Documentation: https://jupyter-notebook.readthedocs.io
+
+The Jupyter NbClassic is a web application that allows you to create and
+share documents that contain live code, equations, visualizations, and
+explanatory text. The NbClassic has support for multiple programming
+languages, sharing, and interactive widgets.
 
 
 Current build status
@@ -47,16 +49,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `nbclassic` can be installed with:
+Once the `conda-forge` channel has been enabled, `nbclassic` can be installed with `conda`:
 
 ```
 conda install nbclassic
 ```
 
-It is possible to list all of the versions of `nbclassic` available on your platform with:
+or with `mamba`:
+
+```
+mamba install nbclassic
+```
+
+It is possible to list all of the versions of `nbclassic` available on your platform with `conda`:
 
 ```
 conda search nbclassic --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search nbclassic --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search nbclassic --channel conda-forge
+
+# List packages depending on `nbclassic`:
+mamba repoquery whoneeds nbclassic --channel conda-forge
+
+# List dependencies of `nbclassic`:
+mamba repoquery depends nbclassic --channel conda-forge
 ```
 
 
@@ -74,10 +101,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
