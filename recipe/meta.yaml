@@ -60,7 +60,7 @@ test:
     - cat server_extensions | grep -iE "nbclassic.*OK"
     - cat server_extensions | grep -iE "notebook_shim.*enabled"
     - cat server_extensions | grep -iE "notebook_shim.*OK"
-  downstream:
+  downstreams:
     - jupyterlab
     - jupyterlab_server
     - notebook
