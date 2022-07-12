@@ -7,14 +7,16 @@ Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/main/LICENSE.txt)
 
-Summary: Jupyter Notebook as a Jupyter Server Extension.
+Summary: A web-based notebook environment for interactive computing
 
-Development: https://github.com/jupyterlab/nbclassic
+Development: https://github.com/jupyter/nbclassic
 
-This project prepares for a future where JupyterLab and other frontends
-switch to Jupyter Server for their Python Web application backend. Using
-this package, users can launch Jupyter Notebook, JupyterLab and other
-frontends side-by-side on top of the new Python server backend.
+Documentation: https://jupyter-notebook.readthedocs.io
+
+The Jupyter NbClassic is a web application that allows you to create and
+share documents that contain live code, equations, visualizations, and
+explanatory text. The NbClassic has support for multiple programming
+languages, sharing, and interactive widgets.
 
 
 Current build status
