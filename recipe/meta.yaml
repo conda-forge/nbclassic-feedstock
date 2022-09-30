@@ -1,4 +1,4 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: nbclassic
@@ -6,22 +6,23 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: f03111b2cebaa69b88370a7b23b19b2b37c9bb71767f1828cdfd7a047eae8edd
+  sha256: f6c4fbac2c5efc6f5e7c02a69f5359a6040b90ac648719990d059bdec380afec
 
 build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
-    - jupyter-bundlerextension = nbclassic.bundler.bundlerextensions:main
     - jupyter-nbclassic = nbclassic.notebookapp:main
-    - jupyter-nbextension = nbclassic.nbextensions:main
-    - jupyter-serverextension = nbclassic.serverextensions:main
+    - jupyter-nbclassic-bundlerextension = nbclassic.bundler.bundlerextensions:main
+    - jupyter-nbclassic-extension = nbclassic.nbextensions:main
+    - jupyter-nbclassic-serverextension = nbclassic.serverextensions:main
 
 requirements:
   host:
     - jupyter-packaging >=0.9,<1
     - python >=3.7
+    - babel
     - pip
   run:
     - argon2-cffi
@@ -51,9 +52,9 @@ test:
   commands:
     - pip check
     - jupyter nbclassic --help
-    - jupyter nbextension --help
-    - jupyter serverextension --help
-    - jupyter bundlerextension --help
+    - jupyter nbclassic-extension --help
+    - jupyter nbclassic-serverextension --help
+    - jupyter nbclassic-bundlerextension --help
     - jupyter server extension list
     - jupyter server extension list 1>server_extensions 2>&1
     - cat server_extensions | grep -iE "nbclassic.*enabled"
