@@ -1,4 +1,4 @@
-{% set version = "0.4.6" %}
+{% set version = "0.4.7" %}
 
 package:
   name: nbclassic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: 3c18d343b292f938efc93205761e674f20eca06ead25e0eedc17f7ae252bf56d
+  sha256: 1e0470583b55089c427940ed31b8a866ffef7ccab101494e409efe5ac7ba9897
 
 build:
   number: 0
