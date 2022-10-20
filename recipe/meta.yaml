@@ -14,9 +14,6 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - jupyter-nbclassic = nbclassic.notebookapp:main
-    - jupyter-nbclassic-bundlerextension = nbclassic.bundler.bundlerextensions:main
-    - jupyter-nbclassic-extension = nbclassic.nbextensions:main
-    - jupyter-nbclassic-serverextension = nbclassic.serverextensions:main
 
 requirements:
   host:
@@ -25,24 +22,9 @@ requirements:
     - babel
     - pip
   run:
-    - argon2-cffi
-    - ipykernel
-    - ipython_genutils
-    - jinja2
-    - jupyter_client >=6.1.1
-    - jupyter_core >=4.6.1
     - jupyter_server >=1.17.0
-    - nbconvert >=5
-    - nbformat
-    - nest-asyncio >=1.5
-    - notebook-shim >=0.1.0
-    - prometheus_client
+    - notebook_shim >=0.1.0
     - python >=3.7
-    - pyzmq >=17
-    - send2trash >=1.8.0
-    - terminado >=0.8.3
-    - tornado >=6.1
-    - traitlets >=4.2.1
 
 test:
   imports:
@@ -52,9 +34,6 @@ test:
   commands:
     - pip check
     - jupyter nbclassic --help
-    - jupyter nbclassic-extension --help
-    - jupyter nbclassic-serverextension --help
-    - jupyter nbclassic-bundlerextension --help
     - jupyter server extension list
     - jupyter server extension list 1>server_extensions 2>&1
     - cat server_extensions | grep -iE "nbclassic.*enabled"
