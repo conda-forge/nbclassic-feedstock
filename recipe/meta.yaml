@@ -9,7 +9,7 @@ source:
   sha256: 889772a7ba524eb781d2901f396540bcad41151e1f7e043f12ebc14a6540d342
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
@@ -33,7 +33,7 @@ requirements:
     - jupyter_client >=6.1.1
     - jupyter_core >=4.6.1
     - jupyter_server >=1.8
-    - nbconvert >=5
+    - nbconvert-core >=5
     - nbformat
     - nest-asyncio >=1.5
     - notebook-shim >=0.1.0
