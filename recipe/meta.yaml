@@ -1,4 +1,4 @@
-{% set version = "0.4.8" %}
+{% set version = "0.5.1" %}
 
 package:
   name: nbclassic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: c74d8a500f8e058d46b576a41e5bc640711e1032cf7541dde5f73ea49497e283
+  sha256: 8e8ffce7582bb7a4baf11fa86a3d88b184e8e7df78eed4ead69f15aa4fc0e323
 
 build:
   number: 0
@@ -21,6 +21,7 @@ build:
 requirements:
   host:
     - jupyter-packaging >=0.9,<1
+    - jupyter_server
     - python >=3.7
     - babel
     - pip
@@ -64,8 +65,10 @@ test:
     # - cat server_extensions | grep -iE "notebook_shim.*OK"
   downstreams:
     - jupyterlab
+    # breaks in mambabuild
     - jupyterlab_server
-    - notebook
+    # breaks with some =cuda* stuff in condabuild, maybe mambabuild
+    # - notebook
 
 about:
   home: http://github.com/jupyterlab/nbclassic

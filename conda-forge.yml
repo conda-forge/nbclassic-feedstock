@@ -4,3 +4,6 @@ github:
   tooling_branch_name: main
 conda_build:
   pkg_format: '2'
+
+# `mamba` seems to fail with `test/downstreams`
+build_with_mambabuild: false
