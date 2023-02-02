@@ -65,8 +65,10 @@ test:
     # - cat server_extensions | grep -iE "notebook_shim.*OK"
   downstreams:
     - jupyterlab
+    # breaks in mambabuild
     - jupyterlab_server
-    - notebook
+    # breaks with some =cuda* stuff in condabuild, maybe mambabuild
+    # - notebook
 
 about:
   home: http://github.com/jupyterlab/nbclassic
