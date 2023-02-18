@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: nbclassic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: 8e8ffce7582bb7a4baf11fa86a3d88b184e8e7df78eed4ead69f15aa4fc0e323
+  sha256: 40f11bbcc59e8956c3d5ef132dec8e5a853e893ecf831e791d54da0d8a50d79d
 
 build:
   number: 0
@@ -32,7 +32,7 @@ requirements:
     - jinja2
     - jupyter_client >=6.1.1
     - jupyter_core >=4.6.1
-    - jupyter_server >=1.17.0
+    - jupyter_server >=1.8
     - nbconvert >=5
     - nbformat
     - nest-asyncio >=1.5
