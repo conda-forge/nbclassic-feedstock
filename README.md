@@ -1,11 +1,11 @@
-About nbclassic
-===============
+About nbclassic-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/jupyterlab/nbclassic
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/main/LICENSE.txt)
 
 Summary: A web-based notebook environment for interactive computing
 
