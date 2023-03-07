@@ -2,6 +2,10 @@
 
 {% set build_number = 1 %}
 
+# nbconvert depends on pandoc which is difficult to build for some platforms (e.g. linux-ppc64le)
+# To ensure nbclassic is always installable we make two variants of nbclassic
+#   * odd build numbers depend on nbconvert and are favoured by the solver
+#   * even build numbers depend on nbconvert-core and are used as a fallback
 {% if nbconvert_variant is not defined %}
 {% set nbconvert_variant = "nbconvert" %}
 {% endif %}
