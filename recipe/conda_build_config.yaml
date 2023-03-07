@@ -1,3 +1,3 @@
-use_pandoc:
-  - yes
-  - no
+nbconvert_variant:
+  - nbconvert-core
+  - nbconvert
