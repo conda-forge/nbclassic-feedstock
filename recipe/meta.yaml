@@ -1,5 +1,15 @@
 {% set version = "0.5.3" %}
 
+{% set build_number = 1 %}
+
+# nbconvert depends on pandoc which is difficult to build for some platforms (e.g. linux-ppc64le)
+# To ensure nbclassic is always installable we make two variants of nbclassic
+#   * odd build numbers depend on nbconvert and are favoured by the solver
+#   * even build numbers depend on nbconvert-core and are used as a fallback
+{% if nbconvert_variant is not defined %}
+{% set nbconvert_variant = "nbconvert" %}
+{% endif %}
+
 package:
   name: nbclassic
   version: {{ version }}
@@ -9,7 +19,7 @@ source:
   sha256: 889772a7ba524eb781d2901f396540bcad41151e1f7e043f12ebc14a6540d342
 
 build:
-  number: 0
+  number: {{ build_number * 2 + (nbconvert_variant == "nbconvert") }}
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
@@ -33,7 +43,7 @@ requirements:
     - jupyter_client >=6.1.1
     - jupyter_core >=4.6.1
     - jupyter_server >=1.8
-    - nbconvert >=5
+    - {{ nbconvert_variant }} >=5
     - nbformat
     - nest-asyncio >=1.5
     - notebook-shim >=0.1.0
