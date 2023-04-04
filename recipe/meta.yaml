@@ -76,7 +76,8 @@ test:
   downstreams:
     - jupyterlab
     - jupyterlab_server
-    - notebook
+    # breaks with some =cuda* stuff in condabuild, maybe mambabuild
+    # - notebook
 
 about:
   home: http://github.com/jupyterlab/nbclassic
