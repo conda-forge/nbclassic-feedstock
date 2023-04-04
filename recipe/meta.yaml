@@ -1,6 +1,6 @@
-{% set version = "0.5.3" %}
+{% set version = "0.5.4" %}
 
-{% set build_number = 1 %}
+{% set build_number = 0 %}
 
 # nbconvert depends on pandoc which is difficult to build for some platforms (e.g. linux-ppc64le)
 # To ensure nbclassic is always installable we make two variants of nbclassic
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
-  sha256: 889772a7ba524eb781d2901f396540bcad41151e1f7e043f12ebc14a6540d342
+  sha256: 312b3f7d7ff2e6c261d51799bb12e6493498ab47d3469d3a01015d5533fd4d2b
 
 build:
   number: {{ build_number * 2 + (nbconvert_variant == "nbconvert") }}
@@ -75,10 +75,8 @@ test:
     # - cat server_extensions | grep -iE "notebook_shim.*OK"
   downstreams:
     - jupyterlab
-    # breaks in mambabuild
     - jupyterlab_server
-    # breaks with some =cuda* stuff in condabuild, maybe mambabuild
-    # - notebook
+    - notebook
 
 about:
   home: http://github.com/jupyterlab/nbclassic
