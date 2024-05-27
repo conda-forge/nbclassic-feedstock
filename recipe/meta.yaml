@@ -1,15 +1,5 @@
 {% set version = "1.1.0" %}
 
-{% set build_number = 0 %}
-
-# nbconvert depends on pandoc which is difficult to build for some platforms (e.g. linux-ppc64le)
-# To ensure nbclassic is always installable we make two variants of nbclassic
-#   * odd build numbers depend on nbconvert and are favoured by the solver
-#   * even build numbers depend on nbconvert-core and are used as a fallback
-{% if nbconvert_variant is not defined %}
-{% set nbconvert_variant = "nbconvert" %}
-{% endif %}
-
 package:
   name: nbclassic
   version: {{ version }}
@@ -19,9 +9,9 @@ source:
   sha256: 77b77ba85f9e988f9bad85df345b514e9e64c7f0e822992ab1df4a78ac64fc1e
 
 build:
-  number: {{ build_number * 2 + (nbconvert_variant == "nbconvert") }}
+  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
   entry_points:
     - jupyter-nbclassic = nbclassic.notebookapp:main
     - jupyter-nbclassic-bundlerextension = nbclassic.bundler.bundlerextensions:main
@@ -30,30 +20,17 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<1
-    - jupyter_server
-    - python >=3.7
     - babel
+    - jupyter-packaging >=0.9,<1
+    - jupyter_server >=1.17.0
     - pip
+    - python >=3.7
   run:
-    - argon2-cffi
     - ipykernel
     - ipython_genutils
-    - jinja2
-    - jupyter_client >=6.1.1
-    - jupyter_core >=4.6.1
-    - jupyter_server >=1.8
-    - {{ nbconvert_variant }} >=5
-    - nbformat
     - nest-asyncio >=1.5
     - notebook-shim >=0.2.3
-    - prometheus_client
     - python >=3.7
-    - pyzmq >=17
-    - send2trash >=1.8.0
-    - terminado >=0.8.3
-    - tornado >=6.1
-    - traitlets >=4.2.1
 
 test:
   imports:
@@ -84,7 +61,6 @@ about:
   license: BSD-3-Clause
   license_file: LICENSE
   summary: A web-based notebook environment for interactive computing
-  dev_url: https://github.com/jupyter/nbclassic
   doc_url: https://jupyter-notebook.readthedocs.io
   description: |
     The Jupyter NbClassic is a web application that allows you to create and
