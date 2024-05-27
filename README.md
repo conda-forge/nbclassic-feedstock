@@ -9,8 +9,6 @@ Package license: BSD-3-Clause
 
 Summary: A web-based notebook environment for interactive computing
 
-Development: https://github.com/jupyter/nbclassic
-
 Documentation: https://jupyter-notebook.readthedocs.io
 
 The Jupyter NbClassic is a web application that allows you to create and
