@@ -9,8 +9,6 @@ Package license: BSD-3-Clause
 
 Summary: A web-based notebook environment for interactive computing
 
-Development: https://github.com/jupyter/nbclassic
-
 Documentation: https://jupyter-notebook.readthedocs.io
 
 The Jupyter NbClassic is a web application that allows you to create and
@@ -105,7 +103,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
