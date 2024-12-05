@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/n/nbclassic/nbclassic-{{ version }}.tar.gz
   sha256: 77b77ba85f9e988f9bad85df345b514e9e64c7f0e822992ab1df4a78ac64fc1e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
   entry_points:
@@ -24,19 +24,20 @@ requirements:
     - jupyter-packaging >=0.9,<1
     - jupyter_server >=1.17.0
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - ipykernel
     - ipython_genutils
     - nest-asyncio >=1.5
     - notebook-shim >=0.2.3
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
     - nbclassic
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - jupyter nbclassic --help
