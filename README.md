@@ -3,18 +3,13 @@ About nbclassic-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nbclassic-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/jupyterlab/nbclassic
+Home: https://github.com/jupyter/nbclassic
 
 Package license: BSD-3-Clause
 
-Summary: A web-based notebook environment for interactive computing
+Summary: Jupyter Notebook as a Jupyter Server extension.
 
-Documentation: https://jupyter-notebook.readthedocs.io/
-
-The Jupyter NbClassic is a web application that allows you to create and
-share documents that contain live code, equations, visualizations, and
-explanatory text. The NbClassic has support for multiple programming
-languages, sharing, and interactive widgets.
+Documentation: https://nbclassic.readthedocs.io/
 
 Current build status
 ====================
