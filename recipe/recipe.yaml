@@ -62,18 +62,32 @@ tests:
       - jupyter server extension list 1>server_extensions 2>&1
       - cat server_extensions | grep -iE "nbclassic.*enabled"
       - cat server_extensions | grep -iE "nbclassic.*${{ version | replace('.', '\\.') }}.*OK"
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+      - nbval
+      - pytest-cov
+      - pytest-jupyter
+      - pytest-playwright
+      - pytest-tornasync
+      - requests
+      - testpath
+      - python ${{ python_min }}.*
+      - if: unix
+        then:
+          - requests-unixsocket
+    script:
+      - pytest -vv
+
 
 about:
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: A web-based notebook environment for interactive computing
-  homepage: http://github.com/jupyterlab/nbclassic
-  documentation: https://jupyter-notebook.readthedocs.io
-  description: |
-    The Jupyter NbClassic is a web application that allows you to create and
-    share documents that contain live code, equations, visualizations, and
-    explanatory text. The NbClassic has support for multiple programming
-    languages, sharing, and interactive widgets.
+  summary: Jupyter Notebook as a Jupyter Server extension.
+  homepage: https://github.com/jupyter/nbclassic
+  documentation: https://nbclassic.readthedocs.io
 
 extra:
   recipe-maintainers:
