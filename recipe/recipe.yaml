@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.2.0"
+  version: "1.3.0"
 
 package:
   name: nbclassic
@@ -16,7 +16,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-verison-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   python:
     entry_points:
       - jupyter-nbclassic = nbclassic.notebookapp:main
@@ -27,10 +27,12 @@ build:
 requirements:
   host:
     - babel
-    - jupyter_server >=1.17.0
+    - hatch-jupyter-builder >=0.9.1
     - hatchling
+    - jupyter_server >=1.17.0
     - pip
     - python ${{ python_min }}.*
+    - yarn <2
   run:
     - ipykernel
     - ipython_genutils
@@ -59,7 +61,7 @@ tests:
       - jupyter server extension list
       - jupyter server extension list 1>server_extensions 2>&1
       - cat server_extensions | grep -iE "nbclassic.*enabled"
-      - cat server_extensions | grep -iE "nbclassic.*OK\"
+      - cat server_extensions | grep -iE "nbclassic.*${{ version | replace('.', '\\.') }}.*OK"
 
 about:
   license: BSD-3-Clause
