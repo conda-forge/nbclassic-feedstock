@@ -150,6 +150,3 @@ Feedstock Maintainers
 * [@jasongrout](https://github.com/jasongrout/)
 * [@jtpio](https://github.com/jtpio/)
 
-
-<!-- dummy commit to enable rerendering -->
-
